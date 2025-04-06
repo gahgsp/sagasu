@@ -9,6 +9,7 @@ from fastapi import FastAPI, File, UploadFile, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from pydantic import BaseModel
 
 load_dotenv()
 
@@ -25,8 +26,15 @@ HEADERS = {
 }
 
 
+class QueryParams(BaseModel):
+    query: str
+    limit: int = 3
+    random_seed: int = 0.5
+    content_sort: str = "ASC"
+
+
 async def get_example_sentence(session: aiohttp.ClientSession, word: str) -> str:
-    payload = {
+    payload: QueryParams = {
         "query": word,
         "limit": 3,
         "random_seed": round(random.uniform(0, 1), 4),
