@@ -1,0 +1,19 @@
+# Ignoring environment variables.
+*.env
+*.venv
+.venv/
+env/
+venv/
+
+# Temporary folders and files.
+*.pyc
+*.pyo
+__pycache__/
+*.log
+
+# IDEs (Examples: VSCode, PyCharm).
+.vscode/
+.idea/
+
+# .env file.
+.env

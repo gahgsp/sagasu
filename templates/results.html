@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Example Sentences</title>
+  <style>
+    em {
+        font-weight: bold;
+        background-color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+  <h1>Results</h1>
+  <ul>
+    {% for word, sentence in results %}
+      {{ sentence | safe }}
+    {% endfor %}
+  </ul>
+</body>
+</html>
