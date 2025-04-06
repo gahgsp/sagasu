@@ -14,7 +14,7 @@
   <h1>Results</h1>
   <ul>
     {% for word, sentence in results %}
-      {{ sentence | safe }}
+      <li>{{ sentence | safe }}</li>
     {% endfor %}
   </ul>
 </body>
